@@ -1,0 +1,40 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .game-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+  
+  #auraBtn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #auraBtn:hover {
+    background-color: #ffdb58;
+    color: black;
+  }
+  
+  .score {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
