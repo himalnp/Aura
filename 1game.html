@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aura Clicker</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2em; background: #f9f9f9; }
+    #game { display: none; }
+    button { padding: 1em 2em; font-size: 1.2em; margin: 1em; }
+    #exitBtn { background: #f55; color: white; border: none; }
+  </style>
+</head>
+<body>
+
+  <div id="login">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <br />
+    <button onclick="startGame()">Start Game</button>
+    <p id="loginMessage" style="color:red;"></p>
+  </div>
+
+  <div id="game">
+    <h2>Welcome, <span id="playerName"></span>!</h2>
+    <p>Your Aura: <span id="auraCount">0</span></p>
+    <button id="clickBtn">Click Me</button>
+    <br />
+    <button id="exitBtn" onclick="location.reload()">Exit Game</button>
+  </div>
+
+  <script>
+    let students = [];
+    let currentPlayer = null;
+    let lastClick = 0;
+
+    // Load students.json
+    fetch('data/students.json')
+      .then(res => res.json())
+      .then(data => students = data.students)
+      .catch(err => {
+        document.getElementById("loginMessage").textContent = "Error loading student data.";
+        console.error(err);
+      });
+
+    function startGame() {
+      const name = document.getElementById('nameInput').value.trim();
+      currentPlayer = students.find(s => s.name.toLowerCase() === name.toLowerCase());
+
+      if (!currentPlayer) {
+        document.getElementById('loginMessage').textContent = "Name not found.";
+        return;
+      }
+
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('game').style.display = 'block';
+      document.getElementById('playerName').textContent = currentPlayer.name;
+      document.getElementById('auraCount').textContent = currentPlayer.aura;
+
+      // Set up click handler
+      const clickBtn = document.getElementById('clickBtn');
+      clickBtn.addEventListener('click', () => {
+        const now = Date.now();
+        if (now - lastClick >= 30) {
+          currentPlayer.aura++;
+          document.getElementById('auraCount').textContent = currentPlayer.aura;
+          lastClick = now;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

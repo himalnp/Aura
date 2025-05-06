@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Counter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Class 10 Aura Counter</h1>
+            <div class="theme-switcher">
+                <button class="theme-btn" onclick="changeTheme('light')">☀️</button>
+                <button class="theme-btn" onclick="changeTheme('dark')">🌙</button>
+                <a href="game.html" class="btn btn-primary">Play Game</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Podium Section -->
+        <section class="podium-section">
+            <h2 class="section-title">🏆 Top Performers</h2>
+            <div class="podium">
+                <div class="podium-place first-place">
+                    <div class="place-badge">🥇</div>
+                    <div class="student-name" id="first-name">Loading...</div>
+                    <div class="aura-points" id="first-points">0</div>
+                    <div class="custom-badge" id="first-badge"></div>
+                </div>
+                <div class="podium-place second-place">
+                    <div class="place-badge">🥈</div>
+                    <div class="student-name" id="second-name">Loading...</div>
+                    <div class="aura-points" id="second-points">0</div>
+                    <div class="custom-badge" id="second-badge"></div>
+                </div>
+                <div class="podium-place third-place">
+                    <div class="place-badge">🥉</div>
+                    <div class="student-name" id="third-name">Loading...</div>
+                    <div class="aura-points" id="third-points">0</div>
+                    <div class="custom-badge" id="third-badge"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboards -->
+        <section class="leaderboards-section">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('all')">All Students</button>
+                <button class="tab-btn" onclick="showTab('boys')">Boys</button>
+                <button class="tab-btn" onclick="showTab('girls')">Girls</button>
+            </div>
+
+            <div id="all-tab" class="tab-content active">
+                <div class="leaderboard">
+                    <ol class="leaderboard-list" id="all-leaderboard"></ol>
+                </div>
+            </div>
+
+            <div id="boys-tab" class="tab-content">
+                <div class="leaderboard">
+                    <ol class="leaderboard-list" id="boys-leaderboard"></ol>
+                </div>
+            </div>
+
+            <div id="girls-tab" class="tab-content">
+                <div class="leaderboard">
+                    <ol class="leaderboard-list" id="girls-leaderboard"></ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Grid -->
+        <section class="student-grid-section">
+            <h2 class="section-title">📊 All Students</h2>
+            <div class="student-grid" id="student-grid"></div>
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
