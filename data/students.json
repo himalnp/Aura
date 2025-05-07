@@ -23,7 +23,7 @@
       {"id": 22, "name": "Swornim", "aura": 9679, "gender": "male", "badge": "⚽", "history": []},
       {"id": 23, "name": "Prashant", "aura": 19, "gender": "male", "badge": "", "history": []},
       {"id": 24, "name": "Kasish", "aura": 19, "gender": "male", "badge": "Girl", "history": []},
-      {"id": 25, "name": "Supram", "aura": 09, "gender": "male", "badge": "", "history": []}
+      {"id": 25, "name": "Supram", "aura": 9, "gender": "male", "badge": "", "history": []}
     ],
     "champions": {
       "first": null,
